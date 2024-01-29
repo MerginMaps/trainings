@@ -1,4 +1,4 @@
-# Introduction
+# Introduction (9:00 - 9:15)
 ## Introduction to the trainers
 ## Introduction of participants
 ## Learning objectives
@@ -12,30 +12,35 @@ After this training you'll be able to:
 * View and track changes
 * Manage synchronization conflicts
 
-# Overview of Mergin Maps
+# Overview of Mergin Maps (9:15 - 9:30)
 * Presentation about the Mergin Maps ecosystem
 
-# Setup a Mergin Maps project in QGIS
+# Setup a Mergin Maps project in QGIS (9:30 - 10:30)
 * Live demo (plugin, basic project, widgets, synchronisation)
 * PDF with step-by-step tutorial
 
-# Field data collection
-Participants will do the steps and test the project in the field
+# Field data collection (10:30 - 12:30)
+Participants will do the steps and test the project in the field.
+
 Reconvene after lunch
 
-# Mapping results
+# Mapping results (13:00 - 13:30)
 Participants discuss the results
 
-# Mergin Maps Home Page and Dashboard
+# Mergin Maps Home Page and Dashboard (13:30 - 14:00)
 * Live demo of home page and dashboard
 * Live demo of adding members, setting permissions etc.
 
-# Collaborative Mapping
+# Collaborative Mapping (14:00 - 15:00)
 Participants work in pairs on each other's projects. They need to add the other participant as team member, set the roles and together start mapping.
 
-# View and track changes
-Live session to have a look at the transactions and ways to manage conflicts.
+# View and track changes (15:00 - 16:00)
+Live session to:
+1. discuss the results 
+2. have a look at the transactions 
+3. manage conflicts
+4. good practices
 
-# Conclusion
+# Conclusion (16:00 - 17:00)
 Final Q & A, feedback from participants.
 
