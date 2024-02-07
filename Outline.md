@@ -11,6 +11,7 @@ After this training you'll be able to:
 * Use Mergin Maps for collaborative mapping
 * View and track changes
 * Manage synchronization conflicts
+* Apply good practice
 
 # Overview of Mergin Maps (9:15 - 9:30)
 * Presentation about the Mergin Maps ecosystem
