@@ -34,13 +34,15 @@ Participants discuss the results
 # Collaborative Mapping (14:00 - 15:00)
 Participants work in pairs on each other's projects. They need to add the other participant as team member, set the roles and together start mapping.
 
-# View and track changes (15:00 - 16:00)
+# View and track changes (15:00 - 15:30)
 Live session to:
 1. discuss the results 
 2. have a look at the transactions 
+
+# Manage conflicts (15:30 - 16:30)
 3. manage conflicts
 4. good practices
 
-# Conclusion (16:00 - 17:00)
+# Conclusion (16:30 - 17:00)
 Final Q & A, feedback from participants.
 
