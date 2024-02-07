@@ -39,9 +39,11 @@ Live session to:
 1. discuss the results 
 2. have a look at the transactions 
 
-# Manage conflicts (15:30 - 16:30)
+# Manage conflicts (15:30 - 16:00)
 3. manage conflicts
-4. good practices
+
+# Good practices (16:00 - 16:30)
+Add ideas
 
 # Conclusion (16:30 - 17:00)
 Final Q & A, feedback from participants.
