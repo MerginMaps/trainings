@@ -1,0 +1,25 @@
+---
+project:
+  type: website
+  output-dir: _site
+  preview:
+    port: 4200
+    watch-inputs: true
+
+title: "Point Cloud Data in QGIS"
+subtitle: "Free and Open Source GIS Training Courses"
+author: "Hans van der Kwast, Radek Pasiok, Ryan Aherin"
+institute: "Lutra Consulting Ltd."
+
+format:
+  revealjs:
+    incremental: false
+    slide-level: 0
+    logo: img/lutra_logo.png
+    footer: "Point Cloud Data in QGIS"
+    smaller: true
+    scrollable: true
+ 
+---
+
+{{< include mm_intro.qmd >}}

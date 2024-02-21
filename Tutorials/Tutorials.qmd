@@ -1,0 +1,27 @@
+---
+title: "Mergin Maps Admin Essentials"
+subtitle: "A Tutorial"
+author: "Hans van der Kwast"
+date: "2024-02-14"
+format:
+  nanotes-pdf: 
+    keep-tex: true
+    coursename: "Mergin Maps Training"
+    academicyear: 2024
+    # degree: "Undergratuate degree in "
+    # university: "University of Minho"
+    school: "Mergin Maps"
+    #mainfont: SF Pro Text # Make sure you select a font installed in your system 
+    #sansfont: SF Pro Text #  Make sure you select a font installed in your system
+    logofilepath: img/mm_logo_3.png
+# bibliography: bibliography.bib
+reference-location: margin
+citation-location: margin
+---
+
+# Tutorials
+
+{{< include tutorial01.qmd >}}
+{{< include tutorial02.qmd >}}
+
+

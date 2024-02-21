@@ -1,18 +1,26 @@
 # Lutra Training Materials
 
-## Quarto
+## Presentations
 
 Quarto [presentations](https://quarto.org/docs/presentations/)
 
 ```
-quarto preview merginmapsmobilebasic.qmd
+cd Presentations
+quarto preview _index.qmd
 ```
 
-## Generate QR code
+## Tutorials
+You might need to first install nanotes extension (in Powershell with admin rights when on Windows) 
 
 ```
-pip3 install qrcode
-/Users/peterpetrik/Library/Python/3.9/bin/qr "https://app.merginmaps.com/register" > qrcode_register.png
+quarto add nareal/nanotes
+```
+
+To render tutorials to PDF:
+
+```
+cd Tutorials
+quarto render Tutorials.qmd
 ```
 
 
