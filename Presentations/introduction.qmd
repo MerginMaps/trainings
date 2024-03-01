@@ -1,0 +1,192 @@
+---
+project:
+  type: website
+  output-dir: _site
+  preview:
+    port: 4200
+    watch-inputs: true
+
+title: "Mergin Maps Admin Essentials"
+subtitle: "Introduction"
+author: "Hans van der Kwast, Radek Pasiok, Ryan Aherin"
+institute: "Mergin Maps"
+
+format:
+  revealjs:
+    incremental: false
+    slide-level: 0
+    logo: img/lutra_logo.png
+    footer: "Mergin Maps Admin Essentials"
+    smaller: true
+    scrollable: true
+
+---
+
+## Introduction to the trainers
+### Hans van der Kwast
+
+:::: {.columns}
+::: {.column width="40%"}
+* Associate Professor of Open Science and Digital Innovation at IHE Delft Institute for Water Education
+* Owner of [QWAST-GIS](https://www.qwast-gis.com/), official partner of Mergin Maps
+* Physical geographer, specialised in GIS and remote sensing
+* Board member of the [Dutch QGIS User Group](https://qgis.nl/)
+* OSGeo Charter Member
+
+:::
+
+::: {.column width="40%"}
+
+* Co-author of QGIS for Hydrological Applications
+* QGIS certified instructor
+* [GIS OpenCourseWare](https://courses.gisopencourseware.org/)
+
+* [YouTube channel](https://www.youtube.com/@hansvanderkwast)
+
+* PCRaster Tools plugin
+:::
+
+::: {.column width="20%"}
+
+![](../../assets/QWAST_GIS.png)
+![](../../assets/hyd2_230x.png)
+:::
+::::
+
+::: {.notes}
+:::
+
+---
+
+## Introduction to the trainers
+### Radek Pasiok
+
+:::: {.columns}
+::: {.column width="50%"}
+* Add something about yourself
+
+
+:::
+
+::: {.column width="50%"}
+* Some more
+
+
+:::
+::::
+
+::: {.notes}
+:::
+
+---
+
+## Introduction to the trainers
+### Ryan Aherin
+
+:::: {.columns}
+::: {.column width="50%"}
+* Add something about yourself
+
+
+:::
+
+::: {.column width="50%"}
+* Some more
+
+
+:::
+::::
+
+::: {.notes}
+:::
+---
+
+## Tell us something about yourself
+
+* Name, country, background
+* Affiliation
+* How do you (plan to) use Mergin Maps?
+
+---
+
+## Learning objectives
+
+After this today's training you'll be able to:
+
+* Setup a Mergin Maps project in QGIS
+* Synchronize your Mergin Maps project with your workspace
+* Use your project in the field
+* share, transfer and delete projects
+* Set roles and permissions
+* Use Mergin Maps for collaborative mapping
+* View and track changes
+* Manage synchronization conflicts
+* Apply good practice
+
+---
+
+## Programme
+
+:::: {.columns}
+::: {.column width="20%"}
+**Time**
+
+09:15 - 09:30
+
+09:30 - 10:30
+
+10:30 - 12:30
+
+12:30 - 13:00
+
+13:00 - 13:30
+
+13:30 - 14:00
+
+14:00 - 15:00
+
+15:00 - 15:30
+
+15:30 - 16:00
+
+16:00 - 16:30
+
+16:30 - 17:00
+:::
+
+::: {.column width="80%"}
+**Topic**
+
+Overview of Mergin Maps
+
+Setup a Mergin Maps project in QGIS (Live demo)
+
+Practice with setting up and testing a project
+
+Lunch
+
+Discuss the mapping project results
+
+Mergin Maps Home Page and Dashboard
+
+Collaborative Mapping
+
+View and track changes
+
+Manage conflicts
+
+Good practices
+
+Conclusion
+:::
+::::
+
+
+---
+
+## Setup a Mergin Maps project in QGIS
+
+* Live demo
+* Step-by-step tutorial
+
+---
