@@ -190,3 +190,15 @@ Conclusion
 * Step-by-step tutorial
 
 ---
+
+## Best Practice Tips
+
+* Making changes in the data schema of layers can lead to issues in the synchronisation process. Design the data schema carefully when creating a layer to avoid the need to change it later.
+* **Always use GeoPackage for survey layers**, otherwise, it is not possible to detect changes from other users and they may be overwritten. Overwritten files are stored in a conflict file.
+* **Add some extra back-up field attributes** when creating a survey layer and hide them in the form design. These can serve as a backup when you need more fields.
+* If you do not need a field, **remove it from the form**. You don't need to delete it from the table.
+* **Instead of renaming a field, change its alias**.
+* **Add new layers to your project as separate GeoPackages**.
+* use **GeoTIFF** format for your raster files or store them in a separate GeoPackage database
+
+---
