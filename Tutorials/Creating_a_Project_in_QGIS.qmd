@@ -1,0 +1,368 @@
+# Creating a Project in QGIS
+
+In this tutorial you will create a new project for surveying buildings in your neighbourhood using QGIS. 
+
+## 1. Before we start
+Please ensure you have already:
+
+* Installed QGIS
+* Signed up to Mergin Maps
+* Installed the Mergin Maps QGIS plugin
+
+
+## 2. Create a minimal project
+In this section, we'll create a mimimal project that we'll further extend later in this tutorial.
+
+1. Open QGIS
+2. Locate the Mergin Maps QGIS plugin toolbar in the upper navigation panel in QGIS. Click on the **Create Mergin Maps Project** button
+  ![QGIS plugin Create Mergin Maps Project](../assets/qgis-create-mergin-project.jpg "QGIS plugin Create Mergin Maps Project")
+
+3. Choose the first option: **New basic QGIS project**
+  ![Create Mergin Maps project: New basic QGIS project](../assets/mergin-plugin-new-basic-project.jpg "Create Mergin Maps project: New basic QGIS project")
+
+4. When creating a Mergin Maps project, we need to set:
+  - a [workspace](https://merginmaps.com/docs/manage/workspaces/). If you have multiple workspaces available, choose the one you want to use. Here we'll use `MM Admin Essentials`.
+  - **Project Name**. In this example we use `buildings`. For this training you should give a unique name to the project, because all participants work in the same workspace. Therefore, add your name with and underscore (for example `buildings_hans`)
+  - The folder where the project should be created. Here, we use `MerginMapsProjects`
+  
+5. Click **Finish** to create the project.
+
+  ![Create new Mergin Maps project in QGIS](../assets/Screenshot 2024-03-01 212429.png "Create new Mergin Maps project in QGIS")
+
+Your new project should now be created and uploaded to [ Mergin Maps](https://merginmaps.com/) cloud. 
+
+ 6. **Close** the dialog window to continue working with this project in QGIS.
+  
+
+## 3. Create a subfolder for photos
+It can be useful to set up a custom folder for photos, e.g. if you want to use selective synchronisation or if you simply want to have your data organised.
+In this tutorial, we'll use a subfolder for selective sync of our photos.
+
+To set up a custom folder:
+
+1. In the **Browser** panel, click right on **Project Home** and choose **Open Directory...*** from the context menu
+
+  ![Open Directory](../Assets/Screenshot 2024-03-03 085523.png "Open Directory")
+
+2. There create a subfolder with the name `photos`
+
+Later, we'll set up this folder for storing our photos and the use of selective synchronisation.
+
+
+## 4. Add layers
+This basic project contains a single point layer called `Survey` and an OpenStreetMap vector tiles layer as a background map.
+
+::: tip
+Various background maps can be used in Mergin Maps mobile app, if they are supported by QGIS. You can learn how to add offline and online background maps [here](https://merginmaps.com/docs/gis/settingup_background_map/).
+:::
+
+We will now add two more survey layers - a point layer for surveying buildings and a line layer for road or path close to the building.
+
+1. Select **Layer > Create Layer > New GeoPackage Layer...**
+  ![QGIS Create new GeoPackage layer](../Assets/Screenshot 2024-03-01 213925.png "Create new GeoPackage layer")
+
+2. Now we will create the `buildings` layer:
+  - **Database**: navigate to the project's folder and save the GeoPackage as `buildings.gpkg` 
+   Here: `MerginMapsProjects\buildings\buildings.gpkg`
+  - **Table name** will be set as `buildings` by default  
+  - **Geometry type**: ***Point***
+  
+  ![New GeoPackage point layer](../Assets/Screenshot 2024-03-01 214359.png "New GeoPackage point layer")
+
+3. Add a **New Field** called `date` with the data type ***Date***
+  ![New date field](../Assets/qgis-geopackage-date.jpg "New date field")
+
+4. Add three more new fields:
+
+* `floors`, data type ***Integer (32 Bit)***
+* `function`, data type ***Text (string)***
+* `photo`, data type ***Text Data***
+
+  In the **Fields List**, you can see the overview of added attributes and their respective data types. It should look like this:
+
+  ![Field list with created attributes](../Assets/Screenshot 2024-03-02 191009.png "Field list with created attributes")
+
+5. Click **OK**. A new layer called `buildings` has now been added to the **Layers** panel.
+  ![Point layer added to QGIS project](../Assets/Screenshot 2024-03-02 185958.png "Point layer added to QGIS project")
+
+6. Repeat steps 1 to 5 above to add another new layer called `roads` with these details:
+
+  * **Database**: `MerginMapsProjects\buildings\roads.gpkg`
+  * **Geometry type**: ***LineString***
+  * **Fields**:
+   - `type`, data type ***Text (string)***
+   - `sidewalk`, data type ***Boolean***
+  
+  ![Create GeoPackage line layer with defined attributes](../Assets/Screenshot 2024-03-01 214844.png)
+  
+Once you are finished, there should be two new layers on the **Layers** panel: `buildings` and `roads`.
+![Layers panel in QGIS with created layers](../Assets/Screenshot 2024-03-02 191503.png "Layers panel in QGIS with created layers")
+
+
+## 5. Configure attributes forms
+Now we will make a couple of small changes to the layers' form settings. The forms define how users interact with feature attributes in the field.
+
+We will start with seting up the form for the `buildings` layer:
+
+1. Double-click the `buildings` layer in the **Layers** panel to open the **Layer properties**
+
+2. Select **Attributes Form** on the left change ***Autogenerate*** to ***Drag and Drop Designer***. This will allow us to easily modify the order of attributes in the field form and remove the ones that we don't want to show.
+  
+![QGIS Attributes form](../Assets/Screenshot 2024-03-02 192408.png "QGIS Attributes form")
+
+3. Remove the `fid` attribute by clicking the minus button. 
+
+`fid` is a special attribute used to identify features. We recommend not allowing users to edit this attribute.
+
+4. Drag the `photo` attribute to the top.
+
+The screen now looks like this:
+![QGIS Attributes form modified](../Assets/Screenshot 2024-03-02 193153.png "QGIS Attributes form modified")
+
+The `photo` attribute itself is stored as ***Text Data*** and we will use it to attach photos to surveyed features. To achieve this, we need to configure the `photo` attribute's **Widget Type** as ***Attachment***.
+
+5. Click on the `photo` attribute
+
+6. At **Alias** type `Photo`
+
+7. Change **Widget Type** to ***Attachment***
+
+**Path** defines where the photos will be stored. We need to change the **Default path** to the `photos` folder we have created earlier. 
+
+8. Click on the *Data defined override* icon and choose **Edit...**
+  ![Data defined override](../Assets/Screenshot 2024-03-03 090258.png "Data defined override")
+
+9. In **Expression String Builder** enter the expression `@project_folder + '\\photos'`. Click **OK**
+  ![Expression for path](../Assets/Screenshot 2024-03-03 090756.png "Expression for path")
+
+10. Set *Store path as* **Relative to Project Path**:
+  ![Relative path](../Assets/Screenshot 2024-03-03 091101.png "Relative path")
+
+11. Set **Integrated Document Viewer** type to ***Image***.
+  
+![Integrated document viewer](../Assets/Screenshot 2024-03-02 194058.png "Integrated document viewer")
+
+Now let's modify the `date` attribute, so it shows the date in the desired format.
+
+12. Click on the `date` attribute
+
+13. Set **Alias** to `Date`
+
+14. Under **Widget Type** use **Display Format** ***Custom*** and change it to `dd MMMM yyyy`. Check the preview.
+
+![Date widget](../Assets/Screenshot 2024-03-02 195128.png "Date widget")
+
+It's useful to have the current date automatically filled in when you add a point in the Mergin Maps mobile app.
+
+15. Under **Defaults** use `$now` as **Default value**. Check the preview.
+
+Now we'll configure the `floors` attribute form field.
+
+16. Set the form for the `floors` attribute as follows:
+  - **Alias** to `Floors`
+  - **Widget Type** to ***Range*** using a ***Slider***. Set **Minumum** to `1` and **Maximum** to `30`. Feel free to adjust the maximum to your needs. We'll use `1` for **Step**.
+
+![Slider widget](../Assets/Screenshot 2024-03-02 204447.png "Slider widget")
+
+Finally, we'll modify the `function` attribute for the function of the building. We'll use a drop-down list.
+
+17. Set the form for the `function` attribute as follows:
+  - **Alias** to `Function`
+  - Change the **Widget Type** to ***Value Map***
+  - Enter **Values** and **Descriptions** similar to these (both are set the same in this example):
+  
+  ![QGIS Attributes form Value Map Function](../Assets/Screenshot 2024-03-02 204912.png "QGIS Attributes form Value Map Function")
+
+**Value** is how the data will be stored in the underlying dataset and **Description** is how it will be displayed in the form to the user.
+
+18. The setup of the `buildings` layer is complete. Click **OK** to close the **Layer Properties** window.
+
+Let's configure the `roads` layer now. This time we'll not use the ***Drag and Drop Designer***.
+
+19. In the **Layers** panel, double-click the `roads` layer to open the **Layer properties**
+
+20. Select **Attributes Form** on the left and click on the `type` attribute
+
+21. Set the form for the `type` attribute as follows:
+  - **Alias** to `Road type`
+  - **Widget type** to ***Value Map***
+  - Enter **Values** and **Descriptions** similar to these (both are set the same in this example):
+
+![QGIS Attributes form Value Map Types](../Assets/Screenshot 2024-03-02 205849.png "QGIS Attributes form Value Map Types")
+
+22. Click on the `sidewalk` attribute.
+
+Because the data type of the `sidewalk` field is ***boolean***, by default the ***Checkbox*** widget type is used and ***"True" or "False"*** are stored.
+We only need to set the **Alias**.
+
+23. Set the **Alias** to `Is there a sidewalk?`
+
+24. `fid` should not be editable. Click on the `fid` attribute and uncheck the **Editable** option.
+25. Click **OK** to close the **Layer properties**.
+
+There is much more that can be done with the Attributes Form in QGIS when preparing a [Mergin Maps](https://merginmaps.com/) project! You can learn more about forms in [Setting Up Form Widgets](https://merginmaps.com/docs/layer/settingup_forms/), [Advanced Form Configuration](https://merginmaps.com/docs/layer/settingup_forms_settings/) or [this video](https://youtu.be/jc4p1PpXj3k?si=zVEYE_peW35MXS4f).
+
+## 6. Project settings
+In this section, we'll configure the project properties.
+
+### Relative paths
+All paths to the project data in the Mergin Maps mobile app are relative to the project location. Let's check if this is the case in the **Project Properties**.
+
+1. In the main menu, go to **Project** > **Properties**
+
+   ![Project properties](../Assets/Screenshot 2024-03-03 081543.png "Project properties")
+
+2. Ensure that the paths are set to *Relative* in the **General** tab in **Project Properties**
+   ![Project properties relative paths](../Assets/Screenshot 2024-03-03 081904.png "Project properties relative paths")
+
+### Layer capabilities
+Next, we'll check **Layers capabilities**.
+
+3. In the **Project Properties** dialog, go to the **Data Sources** tab.
+
+  - Identifiable layers can be queried in Mergin Maps mobile app. If you want to be able to search for attribute values in a layer, it needs to be **identifiable** and **searchable**.
+  - **read-only** layers cannot be modified. If a vector layer is not intended to be used as a survey layer, set it as read-only.
+  - In case you have non-spatial layers, they need to be set as **searchable** to enable browsing, searching, or editing.
+
+4. Check the settings.
+   ![Data sources](../Assets/Screenshot 2024-03-03 083242.png "Data sources")
+
+### Project extent
+In the Mergin Maps mobile app, there is an option to zoom to the project extent.
+
+If the project extent is not set, the Mergin Maps mobile app zooms to all visible layers. This is not particularly convenient when you have a layer with a large/global extent (e.g. OpenStreetMap).
+
+To set the project extent:
+
+5. In the **Project Properties** dialog, go to the **View Settings** tab 
+
+6. Check the **Set Project Full Extent** option
+
+   ![Project extent](../Assets/Screenshot 2024-03-03 083951.png "Project extent")
+
+Here, either enter the coordinate extent of your project bounding box or use the map canvas extent. The extent can be also calculated from a layer in your project.
+
+7. Set the extent to your neighbourhood
+
+### Selective synchronisation
+Selective sync feature adds a possibility to not download specified files on other devices in the synchronisation process. These files are only stored on the creator's device and server and can be accessed on Mergin Maps web or QGIS desktop. Other collaborators on different devices will not receive these files during synchronisation.
+
+Selective sync is useful mainly when a project contains a lot of data (for example photos) and these data do not necessarily need to be stored on all devices. Another advantage is a significant reduction of synchronisation time.
+
+See the example in the picture below. Two surveyors Jim and Susan are capturing features in the field. When it comes to synchronisation, Jim hits the arrow icon to synchronise his changes. Features together with photos are now stored on the server. When Susan synchronises the project, synchronisation first downloads Jim's changes (including photos) and after that uploads Susan's changes to the server. However, selective sync can exclude photos from being downloaded.
+
+![Selective sync example](../Assets/selective-sync.jpg "Selective sync example")
+
+Let's set it up for our *photos* folder.
+
+8. In the **Project Properties** dialog, go to the **Mergin Maps** tab
+
+9. Check **Enable selective sync for Input**
+
+10. At **Only apply for folder** type `photos`, so it only applies to this subfolder of your project
+  ![Selective sync for a subfolder](../Assets/Screenshot 2024-03-03 085049.png "Selective sync for a subfolder")
+
+### Resizing pictures automatically
+Photos that are captured during the field survey or uploaded using Mergin Maps mobile app can be automatically resized, e.g. to save up storage space.
+
+By default, the quality is set to Original - the original pictures are stored. If you want to resize the pictures, you can choose from High, Medium, or Low quality. The [EXIF](https://merginmaps.com/docs/layer/exif_metadata/) metadata of the original files are kept.
+
+11. Set the **Photo quality** to ***Medium***.
+  ![Photo quality](../Assets/Screenshot 2024-03-03 091827.png "Photo quality")
+
+### Snapping
+For the roads it would be useful to switch on snapping. You can snap the vertices of new features to existing geometries. Snapping can also help you avoid creating topological errors in your datasets.
+
+The Mergin Maps QGIS plugin provides three snapping options:
+
+* *No snapping* - snapping is not enabled (default)
+* *Basic snapping* - features are snapped to the vertices and segments of vector features in the project
+* *Follow QGIS snapping* - uses the snapping preferences defined in teh QGIS project
+
+Here we'll setup *Basic snapping*:
+
+12. Change the snapping settings to ***Basic snapping***
+  ![Basic snapping](../Assets/Screenshot 2024-03-03 092740.png "Basic snapping")
+
+When capturing a new feature near an existing one, the crosshairs will turn purple and snap to its vertex or to its segment.
+
+For more advanced snapping settings, check the [Mergin Maps documentation](https://merginmaps.com/docs/gis/snapping/).
+
+### Other settings
+In the **Project Properties** under the **Mergin Maps** tab you can configure a few more things:
+
+* Photo name format: you can use expressions with variables to control the naming of photos
+* Position tracking: when this is activated, you can track your position with the Mergin Maps mobile app.
+
+For this tutorial, we'll not change these settings. Check the [Mergin Maps documentation](https://merginmaps.com/docs/gis/features/) if you want to learn more about this.
+
+## 7. Settings for Mergin Maps mobile app preview panel
+What appears in the Mergin Maps mobile app preview panel can be defined in the **Display** tab in **Layer Properties**. Here we'll configure this for the `buildings` layer.
+
+1. In the **Layers** panel, double-click on the `buildings` layer
+
+2. Go to the **Display** tab
+
+At **Display Name** you can add a field or expression. This will be shown in the title of the preview panel in the app.
+
+3. Add the following expression:
+`"function" || ' surveyed on: ' || "date"`
+
+![Display Name](../Assets/Screenshot 2024-03-03 111322.png "Display Name")
+
+In addition to this, you can also add the picture or other attributes of the survey feature using the **HTML Map Tip**.
+The **HTML Map Tip** is the content of the preview panel. While QGIS always interprets the content of map tip as being HTML, Mergin Maps mobile app extends the syntax to allow two more modes: field values and images. If the map tip is not specified, Mergin Maps mobile app will try to use the first three fields and show their attribute values.
+
+Here we're going to add a photo.
+
+4. Add the following **HTML Map Tip**:
+```
+# image
+file:///[%@project_folder%]/[% "image_1" %]
+```
+
+![HTML Map Tip](../Assets/Screenshot 2024-03-03 113406.png "HTML Map Tip")
+
+If the map tip has `# image` marker on the first line, the following line is understood as the URL for the image. It can be a regular file on the file system, but it could be even a remote image from network. Expressions embedded in the image URL will be evaluated (enclosed in `[% 1+1 %]`).
+
+5. Click **OK** to close the dialog.
+
+## 8. Style the layers
+The layer styles from QGIS are also used in the Mergin Maps mobile app. Here we're going to embed an SVG marker.
+
+1. In the **Layers** panel select the `buildings` layer and type `F7` to open the **Layer Styling** panel
+
+2. There click ***Simple Marker** and change the *Symbol layer type* to ***SVG Marker***
+
+3. In the **SVG browser** look for **accommodation** > **house**
+
+4. Change the **Size** to 6 mm. Change the colour if needed
+  ![Select SVG symbol](../Assets/Screenshot 2024-03-03 095037.png "Select SVG symbol")
+
+5. Scroll down and under **Dynamic SVG parameters** click the arrow next to the file path and choose ***Embed File...***
+
+6. Browse to the symbol you want to embed (e.g. `accommodation_house.svg`) and click **Open**. Now this file will be embedded in your project and used to style the `buildings` layer.
+
+## 9. Saving changes to Mergin Maps
+We'll now make some last changes, save them and sync the project back to the [Mergin Maps](https://merginmaps.com/) cloud.
+
+1. Right click on the layer called `Survey` and find the **Rename Layer** option. Rename the layer to `Survey notes` (the name `Survey` is too general in this context).
+2. **Save** the QGIS project
+  ![Save QGIS project](../Assets/qgis-project-save.jpg "Save QGIS project")
+
+3. Use the **Synchronise Mergin Maps Project** button in the Mergin Maps QGIS plugin toolbar.
+  ![Synchronise Mergin Maps project in QGIS](../Assets/Screenshot 2024-03-03 100346.png "Synchronise Mergin Maps project in QGIS")
+  
+The **Project status** window will open. It contains the overview of local changes that were made since the last synchronisation: two layers were added to the project (`roads.gpkg` and `buildings.gpkg`) and some changes were made in the QGIS project file (`buildings.qgz`).
+
+4. Click **Sync** to synchronise the project
+
+  ![Mergin Maps plugin synchronisation Project status](../Assets/Screenshot 2024-03-03 100602.png "Mergin Maps plugin synchronisation Project status")
+ 
+In a few moments your changes are safely stored in the Mergin Maps cloud
+![Successful synchronisation of Mergin Maps project in QGIS](../Assets/Screenshot 2024-03-03 100842.png "Successful synchronisation of Mergin Maps project in QGIS")
+
+Synchronising changes between users and devices is a core principle of [Mergin Maps](https://merginmaps.com/). When you sync a project, changes that have been made by other users and devices since you last synced are fetched and any changes you've made are pushed.
+
+Changes are merged safely and easily from different users, even when they edit the same feature. [Mergin Maps](https://merginmaps.com/) tracks project version history so you can download a previous version of a project if you need to.
+
