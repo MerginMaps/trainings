@@ -132,7 +132,7 @@ The `photo` attribute itself is stored as ***Text Data*** and we will use it to 
 8. Click on the *Data defined override* icon and choose **Edit...**
   ![Data defined override](../Assets/Screenshot 2024-03-03 090258.png "Data defined override")
 
-9. In **Expression String Builder** enter the expression `@project_folder + '\\photos'`. Click **OK**
+9. In **Expression String Builder** enter the expression `@project_folder + '/photos'`. Click **OK**
   ![Expression for path](../Assets/Screenshot 2024-03-03 090756.png "Expression for path")
 
 10. Set *Store path as* **Relative to Project Path**:
