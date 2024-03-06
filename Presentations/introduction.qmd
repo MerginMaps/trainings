@@ -19,7 +19,8 @@ format:
     footer: "Mergin Maps Admin Essentials"
     smaller: true
     scrollable: true
-
+  pdf:
+    toc: false
 ---
 
 ## Introduction to the trainers
@@ -48,8 +49,8 @@ format:
 
 ::: {.column width="20%"}
 
-![](../../assets/QWAST_GIS.png)
-![](../../assets/hyd2_230x.png)
+![](../Assets/QWAST_GIS.png)
+![](../Assets/hyd2_230x.png)
 :::
 ::::
 
@@ -61,19 +62,15 @@ format:
 ## Introduction to the trainers
 ### Radek Pasiok
 
-:::: {.columns}
-::: {.column width="50%"}
-* Add something about yourself
+* Civil engineer with a strong background in hydrodynamics and river hydraulics
+* QGIS plugins developer and maintainer
+* 8 years at Lutra Consulting supporting users in:
+  * QGIS
+  * Mergin Maps
+  * Python
+  * PostgreSQL/PostGIS
+  * GeoServer
 
-
-:::
-
-::: {.column width="50%"}
-* Some more
-
-
-:::
-::::
 
 ::: {.notes}
 :::
@@ -83,19 +80,11 @@ format:
 ## Introduction to the trainers
 ### Ryan Aherin
 
-:::: {.columns}
-::: {.column width="50%"}
-* Add something about yourself
-
-
-:::
-
-::: {.column width="50%"}
-* Some more
-
-
-:::
-::::
+* Customer support at Mergin Maps
+* MSc in GIS, specialised in spatial database management and hydrology
+* Background in responsible sourcing and supply chains
+* [Mastodon: @r_aherin](https://mapstodon.space/@r_aherin)
+* [LinkedIN: ryanaherin](https://www.linkedin.com/in/ryanaherin/)
 
 ::: {.notes}
 :::
@@ -180,6 +169,95 @@ Good practices
 Conclusion
 :::
 ::::
+
+
+---
+
+##
+
+![](../Assets/mm_collect_share_publish.png)
+
+
+---
+
+## Mergin Maps Introduction
+
+A field data collection tool built on the free and open-source QGIS which allows you to 
+
+* collect data in the field
+* store it effectively in the cloud
+* synchronise your data with your team
+* share with various levels of access
+* position tracking while in the field
+* offline field data capture when a connection is unavailable
+
+---
+
+##
+
+![](../Assets/mm_ecosystem.png)
+
+
+---
+
+##
+
+![](../Assets/mm_clients_for_data_manipulation.png)
+
+
+---
+
+## 
+
+![](../Assets/mm_feat_1_easy_collection.png)
+
+
+---
+
+## 
+
+![](../Assets/mm_feat_2_collect_vector.png)
+
+
+---
+
+##
+
+![](../Assets/mm_feat_4_manage_projects.png)
+
+
+---
+
+##
+
+![](../Assets/mm_feat_5_history.png)
+
+
+---
+
+##
+
+![](../Assets/mm_feat_6_high_accuracy_gps.png)
+
+
+---
+
+
+Licensing types
+
+
+---
+
+## Perks of the Mergin Maps sync system:
+
+- No need for cables to get your data on/off your device
+- Share projects with others for collaborative working, even offline
+- Updates from different surveyors are intelligently merged
+- Push data back from the field in real time
+- Version history and cloud-based backup
+- Fine-grained access control
+- Record metadata such as EXIF, GPS and external GNSS device information
+- Sync with your PostGIS datasets and external media storage such as S3 and MinIO
 
 
 ---

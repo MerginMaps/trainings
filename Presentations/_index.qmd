@@ -15,11 +15,14 @@ format:
   revealjs:
     incremental: false
     slide-level: 0
-    logo: img/lutra_logo.png
-    footer: "Point Cloud Data in QGIS"
+    logo: ../Assets/mm_logo.png
+    footer: "Mergin Maps Admin Essentials"
     smaller: true
     scrollable: true
- 
+  pdf:
+    toc: false
 ---
 
-{{< include mm_intro.qmd >}}
+{{< include introduction.qmd >}}
+
+
