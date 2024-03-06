@@ -100,12 +100,12 @@ format:
 
 ## Learning objectives
 
-After this today's training you'll be able to:
+After today's training you'll be able to:
 
 * Setup a Mergin Maps project in QGIS
 * Synchronize your Mergin Maps project with your workspace
 * Use your project in the field
-* share, transfer and delete projects
+* Share, transfer and delete projects
 * Set roles and permissions
 * Use Mergin Maps for collaborative mapping
 * View and track changes
