@@ -1,4 +1,6 @@
-# Lutra Training Materials
+# Mergin Maps Training Materials
+
+<div><img align="left" width="45" height="45" src="https://raw.githubusercontent.com/MerginMaps/docs/main/src/.vuepress/public/slack.svg"><a href="https://merginmaps.com/community/join">Join our community chat</a><br/>and ask questions!</div>
 
 ## Presentations
 
@@ -23,7 +25,6 @@ cd Tutorials
 quarto render Tutorials.qmd
 ```
 
+# License
 
-## License and Use
-
-All materials in this repository are owned by Lutra Consulting Ltd. and are used for various internal, private or public trainings. 
+The Mergin Maps training content is licensed under a [CC-BY license](LICENSE).
