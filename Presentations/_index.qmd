@@ -6,8 +6,8 @@ project:
     port: 4200
     watch-inputs: true
 
-title: "Point Cloud Data in QGIS"
-subtitle: "Free and Open Source GIS Training Courses"
+title: "Mergin Maps Admin Essentials"
+subtitle: ""
 author: "Hans van der Kwast, Radek Pasiok, Ryan Aherin"
 institute: "Lutra Consulting Ltd."
 

@@ -19,8 +19,6 @@ format:
     footer: "Mergin Maps Admin Essentials"
     smaller: true
     scrollable: true
-  pdf:
-    toc: false
 ---
 
 ## Introduction to the trainers
@@ -57,6 +55,7 @@ format:
 ::: {.notes}
 :::
 
+
 ---
 
 ## Introduction to the trainers
@@ -64,7 +63,7 @@ format:
 
 * Civil engineer with a strong background in hydrodynamics and river hydraulics
 * QGIS plugins developer and maintainer
-* 8 years at Lutra Consulting supporting users in:
+* 9 years at Lutra Consulting supporting users in:
   * QGIS
   * Mergin Maps
   * Python
@@ -238,12 +237,6 @@ A field data collection tool built on the free and open-source QGIS which allows
 ##
 
 ![](../Assets/mm_feat_6_high_accuracy_gps.png)
-
-
----
-
-
-Licensing types
 
 
 ---

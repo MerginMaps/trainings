@@ -199,7 +199,7 @@ We will start with setting up the form for the `buildings` layer:
 
 16. Set the form for the `floors` attribute as follows:
     - **Alias** to `Floors`
-    - **Widget Type** to ***Range*** using a ***Slider***. Set **Minumum** to `1` and **Maximum** to `30`. Feel free to adjust the maximum to your needs. We'll use `1` for **Step**.
+    - **Widget Type** to ***Range*** using a ***Slider***. Set **Minimum** to `1` and **Maximum** to `30`. Feel free to adjust the maximum to your needs. We'll use `1` for **Step**.
 
     ![Slider widget](../Assets/Screenshot 2024-03-02 204447.png "Slider widget")
 
